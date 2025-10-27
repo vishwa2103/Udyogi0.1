@@ -1,0 +1,121 @@
+.job-recommendations {
+  background-color: #F9FAFB; /* Soft White */
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  color: #111827;
+}
+
+.job-recommendations h2 {
+  color: #1E40AF; /* Deep Blue */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-recommendations p {
+  color: #4B5563;
+  margin-bottom: 2rem;
+}
+
+/* Card layout */
+.job-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.job-card {
+  background-color: #fff;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 1rem;
+  width: 270px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(30, 64, 175, 0.15);
+}
+
+.job-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.job-card h3 {
+  color: #1E40AF;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-card .employer {
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.job-card .location {
+  color: #6B7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-card .details {
+  background-color: #F9FAFB;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Action buttons */
+.job-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.accept-btn, .reject-btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accept-btn {
+  background-color: #1E40AF; /* Deep Blue */
+  color: #fff;
+}
+
+.accept-btn:hover {
+  background-color: #FACC15; /* Warm Yellow */
+  color: #111827;
+}
+
+.reject-btn {
+  background-color: #E5E7EB;
+  color: #111827;
+}
+
+.reject-btn:hover {
+  background-color: #F87171; /* soft red */
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .job-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card {
+    width: 90%;
+  }
+}
