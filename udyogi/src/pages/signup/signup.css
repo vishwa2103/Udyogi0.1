@@ -1,8 +1,8 @@
 :root {
-  --primary: #0d9488;
-  --accent: #f4e1d2;
-  --background: #fafafa;
-  --text: #1f2937;
+  --primary: #1e40af; /* Deep Blue */
+  --accent: #facc15; /* Warm Yellow */
+  --background: #f9fafb; /* Soft White */
+  --text: #111827; /* Charcoal */
 }
 
 .signup-page {
@@ -71,7 +71,7 @@
 .signup-form input:focus {
   border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.2);
 }
 
 .signup-btn {
@@ -88,7 +88,7 @@
 }
 
 .signup-btn:hover {
-  background-color: #0f766e;
+  background-color: #1e3a8a; /* Darker blue on hover */
 }
 
 .login-text {
