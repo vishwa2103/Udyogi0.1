@@ -1,0 +1,216 @@
+/* ===============================
+   THEME COLORS
+   =============================== */
+:root {
+  --primary: #1E40AF; /* Deep Blue */
+  --accent: #FACC15;  /* Warm Yellow */
+  --background: #F9FAFB; /* Soft White */
+  --text: #111827; /* Charcoal */
+}
+
+/* ===============================
+   BASE STYLES
+   =============================== */
+.merchant-dashboard {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===============================
+   DARK MODE
+   =============================== */
+.dark-mode {
+  background-color: #2d3441;
+  color: #f9fafb;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===============================
+   STATS SECTION
+   =============================== */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: var(--accent);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card .icon {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ===============================
+   JOB MANAGEMENT
+   =============================== */
+.job-management {
+  margin-top: 2.5rem;
+}
+
+.job-management h2 {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.job-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.action-btn.edit {
+  background: var(--primary);
+  color: white;
+}
+
+.action-btn.delete {
+  background: #ef4444;
+  color: white;
+}
+
+.action-btn.view {
+  background: var(--accent);
+  color: var(--text);
+}
+
+/* ===============================
+   NOTIFICATIONS
+   =============================== */
+.notifications {
+  margin-top: 2.5rem;
+}
+
+.notifications h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}
+
+.notifications ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.notifications li {
+  margin-bottom: 0.6rem;
+}
+
+/* ===============================
+   EARNINGS & SUPPORT
+   =============================== */
+.extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.earnings,
+.support {
+  flex: 1;
+  background: var(--accent);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+}
+
+.cta-btn {
+  margin-top: 0.8rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  background-color: #1d3a9e;
+}
+/* ===============================
+   PROFILE SECTION
+   =============================== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+}
+
+.profile-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: 500;
+  color: white;
+}

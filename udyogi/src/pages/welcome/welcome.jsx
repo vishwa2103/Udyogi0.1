@@ -1,104 +1,73 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./Welcome.css";
+import { Link } from 'react-router-dom'
 
 const Welcome = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
   return (
-    <div className="welcome-page">
-      {/* Navbar */}
+    <div className="welcome-container">
       <nav className="navbar">
-        <div className="navbar-container">
-          <Link href="#" className="navbar-brand">
-            UDYOGI
-          </Link>
-
-          <div className="navbar-links">
-            <Link href="#">Home</Link>
-            <Link href="#">Jobs</Link>
-            <Link href="#">How It Works</Link>
-          </div>
-
-          <button className="btn btn-accent">Sign In / Register</button>
-
-          <button className="menu-toggle" onClick={toggleMobileMenu}>
-            ☰
-          </button>
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="mobile-menu">
-            <Link href="#">Home</Link>
-            <Link href="#">Jobs</Link>
-            <Link href="#">How It Works</Link>
-            <Link href="#" className="mobile-signin">
-              Sign In / Register
+        <div className="nav-inner">
+          <div className="logo-container">
+            <Link href="#" className="logo">
+              <img src={"logo1.png"} alt="Logo" className="logo-img" />
+              <span className="logo-text">UDYOGI</span>
             </Link>
           </div>
-        )}
+
+          <div className="nav-links">
+            <Link href="/home">Home</Link>
+            <Link href="#">Jobs</Link>
+            <Link href="#">How It Works</Link>
+          </div>
+
+          <div className="nav-actions">
+            <Link href="/login" className="signin-btn">Login In / Register</Link>
+            <button className="profile-btn">
+              <svg
+                className="profile-icon"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </nav>
-
-      {/* Hero Section */}
-      <section className="hero-section">
-        <h1>UDYOGI</h1>
-        <h2>India’s #1 Platform for Skilled Work & Verified Workers</h2>
-        <p>Access opportunities and top talent with speed, safety, and trust.</p>
-      </section>
-
-      {/* Cards Section */}
-      <section className="cards-section">
-        <div className="card">
-          <h3>WORKER: Find Jobs</h3>
-          <p>Explore verified jobs, digital contracts, and secure payments.</p>
-          <button className="btn btn-primary">I am looking for work</button>
-        </div>
-
-        <div className="card">
-          <h3>SEEKER: Find Talent</h3>
-          <p>
-            Post your requirements, connect with verified professionals, and
-            manage projects.
+      <main className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">UDYOGI</h1>
+          <h2 className="hero-subtitle">Empowering Work. Connecting Talent.</h2>
+          <p className="hero-text">
+            Experience fast & easy access to global opportunities and reliable talent.
           </p>
-          <button className="btn btn-accent">I need to hire</button>
-        </div>
-      </section>
 
-      {/* Footer */}
+          <div className="card-grid">
+            <div className="card">
+              <h3 className="card-title">WORKER: Find Jobs</h3>
+              <p className="card-text">
+                Access verified job postings, manage your contracts digitally, and build your professional reputation globally.
+              </p>
+              <button className="primary-btn">I am looking for work</button>
+            </div>
+            <div className="card">
+              <h3 className="card-title">SEEKER: Find Talent</h3>
+              <p className="card-text">
+                Post requirements, filter pre-vetted professionals, and manage project milestones transparently.
+              </p>
+              <button className="accent-btn">I need to hire</button>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-brand">
-            <h3>UDYOGI</h3>
-            <p>Connecting trusted talent with verified opportunities.</p>
-          </div>
-
-          <div className="footer-column">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link href="#">Find Jobs</Link></li>
-              <li><Link href="#">Post Work</Link></li>
-              <li><Link href="#">Terms</Link></li>
-              <li><Link href="#">Privacy</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-column">
-            <h4>Contact</h4>
-            <ul>
-              <li>support@udyogi.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>World Tower, GA 30303</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          © 2025 UDYOGI Platform. All rights reserved.
-        </div>
+        <p>© {new Date().getFullYear()} UDYOGI. All rights reserved.</p>
       </footer>
     </div>
   );

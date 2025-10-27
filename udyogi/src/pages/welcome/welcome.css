@@ -1,255 +1,256 @@
-/* ===================================
-   GLOBAL STYLES
-   =================================== */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fafafa;
-  color: #1f2937;
-  margin: 0;
-  padding: 0;
+/* ===============================
+   THEME COLORS
+   =============================== */
+:root {
+  --primary: #1E40AF;   /* Deep Blue */
+  --accent: #FACC15;    /* Warm Yellow */
+  --background: #F9FAFB; /* Soft White */
+  --text: #111827;      /* Charcoal */
 }
 
-a {
-  color: #1f2937;
-  text-decoration: none;
-  transition: 0.3s;
+/* ===============================
+   BASE STYLES
+   =============================== */
+.welcome-container {
+  background-color: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-a:hover {
-  color: #0d9488;
-}
-
-/* ===================================
+/* ===============================
    NAVBAR
-   =================================== */
+   =============================== */
 .navbar {
-  background-color: #0d9488;
-  color: #ffffff;
-  position: relative;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: white;
+  /* backdrop-filter: blur(10px); */
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 20;
 }
 
-.navbar-container {
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
 }
 
-.navbar-brand {
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.navbar-links {
+.logo {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  text-decoration: none;
 }
 
-.navbar-links a {
-  color: #ffffff;
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.75rem;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover {
+  color: var(--accent);
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text);
   font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.navbar-links a:hover {
-  color: #f4e1d2;
+.nav-links a:hover {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.btn {
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background-color: #0d9488;
-  color: #fafafa;
-}
-
-.btn-primary:hover {
-  background-color: #0b7f75;
-}
-
-.btn-accent {
-  background-color: #f4e1d2;
-  color: #0d9488;
-}
-
-.btn-accent:hover {
-  background-color: #e8d3c1;
-}
-
-.mobile-menu {
+.nav-actions {
   display: flex;
-  flex-direction: column;
-  background-color: #f4e1d2;
-  color: #0d9488;
-  padding: 16px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.mobile-menu a {
-  padding: 10px 0;
-  text-align: center;
+.signin-btn {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.mobile-signin {
-  background-color: #0d9488;
+.signin-btn:hover {
+  background: var(--primary);
   color: white;
-  border-radius: 6px;
-  margin-top: 10px;
-  padding: 10px;
 }
 
-/* ===================================
+.profile-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: rgba(250, 204, 21, 0.2);
+}
+
+/* ===============================
    HERO SECTION
-   =================================== */
-.hero-section {
-  background-image: linear-gradient(
-      rgba(13, 148, 136, 0.9),
-      rgba(13, 148, 136, 0.9)
-    ),
-    url("https://as2.ftcdn.net/v2/jpg/11/06/24/21/1000_F_1106242142_6YqfrWoAttfN1P9FxtomQyqWivYN38Js.jpg");
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
+   =============================== */
+.hero {
+  background: var(--primary);
+  color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 6rem 1rem;
 }
 
-.hero-section h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.hero-section h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-.hero-section p {
-  font-size: 16px;
-  max-width: 600px;
+.hero-content {
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* ===================================
-   CARDS SECTION
-   =================================== */
-.cards-section {
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+}
+
+/* ===============================
+   CARDS
+   =============================== */
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {
-  background-color: #f4e1d2;
-  border-radius: 12px;
-  padding: 40px 30px;
-  text-align: center;
+  background: white;
+  color: var(--text);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(30, 64, 175, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(13, 148, 136, 0.2);
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
 }
 
-.card h3 {
-  color: #0d9488;
-  margin-bottom: 16px;
-  font-size: 24px;
+.card-title {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.card p {
-  color: #1f2937;
-  margin-bottom: 20px;
+.card-text {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
-/* ===================================
+/* ===============================
+   BUTTONS
+   =============================== */
+.primary-btn,
+.accent-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.accent-btn {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.accent-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===============================
    FOOTER
-   =================================== */
+   =============================== */
 .footer {
-  background-color: #0d9488;
-  color: #ffffff;
-  padding-top: 60px;
-}
-
-.footer-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  padding: 0 20px;
-}
-
-.footer h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.footer p,
-.footer a {
-  color: #f4e1d2;
-  font-size: 14px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
+  background: var(--primary);
+  color: white;
   text-align: center;
-  padding: 16px;
-  font-size: 12px;
-  color: #f4e1d2;
-  border-top: 1px solid rgba(244, 225, 210, 0.4);
+  padding: 1rem 0;
+  margin-top: 4rem;
+  font-size: 0.9rem;
 }
+/* ===============================
+   HERO SECTION WITH BACKGROUND IMAGE
+   =============================== */
+.hero {
+  position: relative;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+  overflow: hidden;
 
-/* ===================================
-   ANIMATIONS
-   =================================== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===================================
-   RESPONSIVE
-   =================================== */
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  /* Background image setup */
+  background-image: 
+    linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.85)), /* overlay tint */
+    url("bgimage.png"); /* 🔹 Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
