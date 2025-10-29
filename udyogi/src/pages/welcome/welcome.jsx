@@ -8,20 +8,19 @@ const Welcome = () => {
       <nav className="navbar">
         <div className="nav-inner">
           <div className="logo-container">
-            <Link href="#" className="logo">
+            <Link to="#" className="logo">
               <img src={"logo1.png"} alt="Logo" className="logo-img" />
               <span className="logo-text">UDYOGI</span>
             </Link>
           </div>
 
           <div className="nav-links">
-            <Link href="/home">Home</Link>
-            <Link href="#">Jobs</Link>
-            <Link href="#">How It Works</Link>
+            <Link to="/home">Home</Link>
+            <Link to="#">Jobs</Link>
+            <Link to="#">How It Works</Link>
           </div>
-
           <div className="nav-actions">
-            <Link href="/login" className="signin-btn">Login In / Register</Link>
+            <Link to="/login" className="signin-btn">Login In / Register</Link>
             <button className="profile-btn">
               <svg
                 className="profile-icon"
