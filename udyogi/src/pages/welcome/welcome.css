@@ -1,0 +1,256 @@
+/* ===============================
+   THEME COLORS
+   =============================== */
+:root {
+  --primary: #1E40AF;   /* Deep Blue */
+  --accent: #FACC15;    /* Warm Yellow */
+  --background: #F9FAFB; /* Soft White */
+  --text: #111827;      /* Charcoal */
+}
+
+/* ===============================
+   BASE STYLES
+   =============================== */
+.welcome-container {
+  background-color: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  /* backdrop-filter: blur(10px); */
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.75rem;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover {
+  color: var(--accent);
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signin-btn {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.signin-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.profile-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: rgba(250, 204, 21, 0.2);
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+}
+
+/* ===============================
+   CARDS
+   =============================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: white;
+  color: var(--text);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(30, 64, 175, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
+}
+
+.card-title {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.primary-btn,
+.accent-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.accent-btn {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.accent-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+/* ===============================
+   HERO SECTION WITH BACKGROUND IMAGE
+   =============================== */
+.hero {
+  position: relative;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+  overflow: hidden;
+
+  /* Background image setup */
+  background-image: 
+    linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.85)), /* overlay tint */
+    url("bgimage.png"); /* 🔹 Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
