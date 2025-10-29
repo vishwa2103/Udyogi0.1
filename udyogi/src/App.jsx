@@ -1,29 +1,25 @@
-// import { useState } from 'react'
-import React from 'react';
-import { Link } from 'react-router-dom'
+
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
-import LoginPage from './pages/login/login'
-import SignupPage from './pages/signup/signup'
-import Home from './pages/home/home'
-import Welcome from './pages/Welcome/Welcome';
-import MerchantDashboard from './pages/merchantprofile/MerchantDashboard';
-import Profile from './pages/Profile/Profile';
+import Home from "./pages/Home";
+import Employee from "./pages/Employee";
+import Navbar from "./components/Navbar";
 
-function App() {
-
+const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/Welcome" element={<Welcome/>} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/employee" element={<Employee />} />
+        <Route path="/employer" element={<><Navbar /><div style={{padding:'4rem'}}>Employer Page</div></>} />
+        <Route path="/notifications" element={<><Navbar /><div style={{padding:'4rem'}}>Notifications Page</div></>} />
+        <Route path="/profile" element={<><Navbar /><div style={{padding:'4rem'}}>Profile Page</div></>} />
         <Route path="/home" element={<Home/>}/>
         <Route path="/merchantdashboard" element={<MerchantDashboard/>}/>
         <Route path='/' element = {<Profile/>}/>
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;
