@@ -1,5 +1,5 @@
-
-import React from "react";
+// import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import LoginPage from './pages/login/login'
@@ -16,6 +16,15 @@ import Shortlist from "./EmployerComponents/Shortlist";
 import HideShowJob from "./EmployerComponents/HideShowJob";
 import EarningsOverview from "./EmployerComponents/EarningsOverview";
 
+<<<<<<< HEAD
+=======
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Employee from "./pages/Employee";
+import Navbar from "./components/Navbar";
+
+>>>>>>> 97c3bfb19d948b8a8e773fa51f98b1feea13bfa0
 const App = () => {
   return (
     <Router>
