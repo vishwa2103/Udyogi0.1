@@ -94,7 +94,6 @@ const Welcome = () => {
             <Link to="#">Jobs</Link>
             <Link to="#">How It Works</Link>
           </div>
-
           <div className="nav-actions">
             {/* Language Dropdown */}
             <div className="language-dropdown">

@@ -1,10 +1,10 @@
-// import { useState } from 'react'
-import { Link } from 'react-router-dom'
+
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import LoginPage from './pages/login/login'
 import SignupPage from './pages/signup/signup'
-import Home from './pages/home/home'
+import Home from './pages/home/Home'
 import Welcome from './pages/welcome/welcome'
 import Employer from './pages/merchantprofile/Employer';
 import Employee from './pages/Employee/Employee';
@@ -16,12 +16,15 @@ import Shortlist from "./EmployerComponents/Shortlist";
 import HideShowJob from "./EmployerComponents/HideShowJob";
 import EarningsOverview from "./EmployerComponents/EarningsOverview";
 
-function App() {
-
+const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Welcome/>} />
+        {/* <Route path="/employee" element={<Employee />} />
+        <Route path="/employer" element={<><Navbar /><div style={{padding:'4rem'}}>Employer Page</div></>} />
+        <Route path="/notifications" element={<><Navbar /><div style={{padding:'4rem'}}>Notifications Page</div></>} />
+        <Route path="/profile" element={<><Navbar /><div style={{padding:'4rem'}}>Profile Page</div></>} /> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/home" element={<Home/>}/>
@@ -36,7 +39,7 @@ function App() {
         <Route path="/employer/EarningsOverview" element={<EarningsOverview />} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;
