@@ -6,7 +6,15 @@ import LoginPage from './pages/login/login'
 import SignupPage from './pages/signup/signup'
 import Home from './pages/home/home'
 import Welcome from './pages/welcome/welcome'
-import MerchantDashboard from './pages/merchantprofile/MerchantDashboard';
+import Employer from './pages/merchantprofile/Employer';
+import Employee from './pages/Employee/Employee';
+import JobPostAnalytics from "./EmployerComponents/JobPostAnalytics";
+import EditJob from "./EmployerComponents/EditJob";
+import DeleteJob from "./EmployerComponents/DeleteJob";
+import ViewApplicants from "./EmployerComponents/ViewApplicants";
+import Shortlist from "./EmployerComponents/Shortlist";
+import HideShowJob from "./EmployerComponents/HideShowJob";
+import EarningsOverview from "./EmployerComponents/EarningsOverview";
 
 function App() {
 
@@ -17,7 +25,15 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/home" element={<Home/>}/>
-        <Route path="/merchantdashboard" element={<MerchantDashboard/>}/>
+        <Route path="/Employee" element={<Employee/>}/>
+        <Route path="/employer" element={<Employer />} />
+        <Route path="/employer/JobPostAnalytics" element={<JobPostAnalytics />} />
+        <Route path="/employer/EditJob" element={<EditJob />} />
+        <Route path="/employer/DeleteJob" element={<DeleteJob />} />
+        <Route path="/employer/ViewApplicants" element={<ViewApplicants />} />
+        <Route path="/employer/Shortlist" element={<Shortlist />} />
+        <Route path="/employer/HideShowJob" element={<HideShowJob />} />
+        <Route path="/employer/EarningsOverview" element={<EarningsOverview />} />
       </Routes>
     </Router>
   )
