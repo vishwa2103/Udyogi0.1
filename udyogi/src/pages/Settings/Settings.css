@@ -1,0 +1,129 @@
+:root {
+  --primary: #1e40af;     /* Deep Blue */
+  --accent: #facc15;      /* Warm Yellow */
+  --background: #f9fafb;  /* Soft White */
+  --text: #111827;        /* Charcoal */
+}
+
+/* Container */
+.linkedin-settings-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Sidebar */
+.settings-sidebar {
+  width: 280px;
+  background-color: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 2rem 1.2rem;
+}
+
+.settings-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--text);
+}
+
+.sidebar-item:hover {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+.sidebar-item.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.sidebar-item.logout {
+  margin-top: 2rem;
+  color: #b91c1c;
+}
+
+.sidebar-item.logout:hover {
+  background-color: #fee2e2;
+}
+
+/* Icons */
+.icon {
+  color: var(--accent);
+}
+
+/* Main Content */
+.settings-main {
+  flex: 1;
+  padding: 3rem 4rem;
+  background-color: var(--background);
+}
+
+.settings-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.settings-content p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.settings-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-content li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.settings-content li span {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .linkedin-settings-container {
+    flex-direction: column;
+  }
+
+  .settings-sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .sidebar-item {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .settings-main {
+    padding: 1.5rem;
+  }
+}

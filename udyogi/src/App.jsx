@@ -15,6 +15,8 @@ import ViewApplicants from "./EmployerComponents/ViewApplicants";
 import Shortlist from "./EmployerComponents/Shortlist";
 import HideShowJob from "./EmployerComponents/HideShowJob";
 import EarningsOverview from "./EmployerComponents/EarningsOverview";
+import Messages from './pages/Messages/Messages';
+import Settings from './pages/Settings/Settings.jsx';
 
 const App = () => {
   return (
@@ -37,6 +39,8 @@ const App = () => {
         <Route path="/employer/Shortlist" element={<Shortlist />} />
         <Route path="/employer/HideShowJob" element={<HideShowJob />} />
         <Route path="/employer/EarningsOverview" element={<EarningsOverview />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path='/settings' element={<Settings />} />
       </Routes>
     </Router>
   );
