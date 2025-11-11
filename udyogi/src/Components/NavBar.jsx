@@ -450,7 +450,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Employee", path: "/employee" },
     { name: "Employer", path: "/employer" },
     { name: "Notifications", path: "/notifications" },

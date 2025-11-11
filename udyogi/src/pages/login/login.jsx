@@ -20,9 +20,11 @@ const LoginPage = () => {
             required
             className="login-input"
           />
+          <Link to="/home">
           <button type="submit" className="login-btn">
             Login
           </button>
+          </Link>
           <a href="#" className="forgot-link">
             Forgot Password?
           </a>

@@ -1,0 +1,146 @@
+/* ======================================
+   COLOR PALETTE
+   ====================================== */
+:root {
+  --primary: #1E40AF;     /* Deep Blue */
+  --accent: #FACC15;      /* Warm Yellow */
+  --background: #F9FAFB;  /* Soft White */
+  --text: #111827;        /* Charcoal */
+}
+
+/* ======================================
+   BASE STYLES
+   ====================================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* ======================================
+   LOGIN PAGE LAYOUT
+   ====================================== */
+.login-page {
+  background-color: var(--background);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================================
+   LOGIN CONTAINER
+   ====================================== */
+.login-container {
+  background-color: var(--accent);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 360px;
+  text-align: center;
+}
+
+/* ======================================
+   HEADINGS
+   ====================================== */
+.login-title {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* ======================================
+   FORM ELEMENTS
+   ====================================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.2);
+}
+
+/* ======================================
+   BUTTON STYLES
+   ====================================== */
+.login-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #1e3a8a; /* Slightly darker Deep Blue */
+}
+
+/* ======================================
+   LINKS
+   ====================================== */
+.forgot-link {
+  display: block;
+  margin-top: 1rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ======================================
+   SIGN-UP TEXT
+   ====================================== */
+.signup-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.signup-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+   ====================================== */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+}
