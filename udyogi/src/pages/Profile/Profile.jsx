@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Profile.css";
+import {FaWallet} from "react-icons/fa"
 import {
   FiSettings,
   FiLogOut,
@@ -8,7 +9,6 @@ import {
   FiSun,
   FiMoon,
   FiUserCheck,
-  FiWallet,
   FiStar,
   FiBell
 } from "react-icons/fi";
@@ -87,7 +87,7 @@ const Profile = () => {
             </li>
             <li>
               <button className="profile-nav-item">
-                <FiWallet /> Wallet & Billing
+                <FaWallet /> Wallet & Billing
               </button>
             </li>
             <li>
