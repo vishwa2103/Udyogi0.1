@@ -1,0 +1,159 @@
+/* === General Page Layout === */
+.howitworks-page {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* === Hero Section === */
+.howitworks-hero {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.howitworks-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.howitworks-hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* === Steps Section === */
+.howitworks-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.howitworks-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.howitworks-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.howitworks-card .icon-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+.howitworks-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.howitworks-card p {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* === Mission Section === */
+.howitworks-mission {
+  background: #e0e7ff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.howitworks-mission h2 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.howitworks-mission p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #374151;
+  font-size: 1rem;
+}
+
+/* === CTA Section === */
+.howitworks-cta {
+  background: #fff;
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+}
+
+.howitworks-cta h3 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.howitworks-cta p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-btn {
+  text-decoration: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.cta-btn.primary {
+  background: #1e40af;
+  color: #fff;
+}
+
+.cta-btn.primary:hover {
+  background: #1e3a8a;
+}
+
+.cta-btn.secondary {
+  border: 2px solid #1e40af;
+  color: #1e40af;
+}
+
+.cta-btn.secondary:hover {
+  background: #1e40af;
+  color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .howitworks-hero h1 {
+    font-size: 2rem;
+  }
+
+  .howitworks-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

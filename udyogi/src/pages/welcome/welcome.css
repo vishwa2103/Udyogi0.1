@@ -188,6 +188,7 @@
   background-repeat: no-repeat;
 }
 
+
 .hero-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -214,7 +215,7 @@
 }
 
 /* ===============================
-   CARDS
+   CARD SECTION
    =============================== */
 .card-grid {
   display: grid;
@@ -222,13 +223,11 @@
   gap: 2rem;
   margin-top: 3rem;
 }
-
 @media (min-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 .card {
   background: white;
   color: var(--text);
@@ -237,19 +236,16 @@
   box-shadow: 0 8px 16px rgba(30, 64, 175, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
 }
-
 .card-title {
   color: var(--primary);
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .card-text {
   color: #4b5563;
   margin-bottom: 1.5rem;
@@ -270,25 +266,122 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .primary-btn {
   background: var(--primary);
   color: white;
 }
-
 .primary-btn:hover {
   background: var(--accent);
   color: var(--primary);
 }
-
 .accent-btn {
   background: var(--accent);
   color: var(--primary);
 }
-
 .accent-btn:hover {
   background: var(--primary);
   color: white;
+}
+
+/* ===============================
+   WHY UDYOGI
+   =============================== */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 4rem 0 2rem;
+}
+.why-udyogi {
+  background: var(--background);
+  padding: 4rem 1rem;
+}
+.features-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.feature-card {
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+.feature-icon {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   HOW IT WORKS
+   =============================== */
+.how-it-works {
+  background: white;
+  padding: 4rem 1rem;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.step {
+  max-width: 280px;
+  text-align: center;
+}
+.step-number {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   TESTIMONIALS
+   =============================== */
+.testimonials {
+  background: var(--primary);
+  color: white;
+  padding: 4rem 1rem;
+}
+.testimonial-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* ===============================
+   CTA SECTION
+   =============================== */
+.cta-section {
+  background: var(--accent);
+  color: var(--primary);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.cta-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 /* ===============================
@@ -316,3 +409,13 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.feature-card:hover .feature-icon {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.feature-card:hover .feature-icon svg {
+  stroke: var(--primary);
+}
+

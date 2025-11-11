@@ -18,7 +18,6 @@ import EarningsOverview from "./EmployerComponents/EarningsOverview";
 import Messages from './pages/Messages/Messages';
 import Settings from './pages/Settings/Settings.jsx';
 
-const App = () => {
   return (
     <Router>
       <Routes>
