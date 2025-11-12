@@ -12,6 +12,8 @@ import {
   FiStar,
   FiBell
 } from "react-icons/fi";
+import { FaWallet } from "react-icons/fa";  // Font Awesome
+
 
 const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
