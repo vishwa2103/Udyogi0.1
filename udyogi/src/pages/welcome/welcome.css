@@ -2,9 +2,9 @@
    THEME COLORS
    =============================== */
 :root {
-  --primary: #1E40AF;   /* Deep Blue */
-  --accent: #FACC15;    /* Warm Yellow */
-  --background: #F9FAFB; /* Soft White */
+  --primary: #1e40af;   /* Deep Blue */
+  --accent: #facc15;    /* Warm Yellow */
+  --background: #f9fafb; /* Soft White */
   --text: #111827;      /* Charcoal */
 }
 
@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 /* ===============================
@@ -65,6 +66,9 @@
   color: var(--accent);
 }
 
+/* ===============================
+   NAV LINKS
+   =============================== */
 .nav-links a {
   margin: 0 1rem;
   background-color: rgb(225, 224, 223);
@@ -79,6 +83,9 @@
   border-bottom: 2px solid var(--primary);
 }
 
+/* ===============================
+   NAV ACTIONS
+   =============================== */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -115,14 +122,74 @@
 }
 
 /* ===============================
-   HERO SECTION
+   LANGUAGE DROPDOWN
+   =============================== */
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.language-dropdown button {
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.language-dropdown button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 0.3rem 0;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.dropdown-menu li:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* ===============================
+   HERO SECTION WITH BACKGROUND IMAGE
    =============================== */
 .hero {
+  position: relative;
   background: var(--primary);
   color: white;
   text-align: center;
   padding: 6rem 1rem;
+  overflow: hidden;
+
+  /* Background image setup */
+  background-image:
+    linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.85)),
+    url("bgimage.png"); /* 🔹 Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .hero-content {
   max-width: 1000px;
@@ -144,25 +211,25 @@
 
 .hero-text {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 3rem;
+  min-height: 2.5rem; /* for typing animation stability */
 }
 
 /* ===============================
-   CARDS
+   CARD SECTION
    =============================== */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-top: 3rem;
 }
-
 @media (min-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 .card {
   background: white;
   color: var(--text);
@@ -171,23 +238,20 @@
   box-shadow: 0 8px 16px rgba(30, 64, 175, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
 }
-
 .card-title {
   color: var(--primary);
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .card-text {
   color: #4b5563;
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ===============================
@@ -204,25 +268,122 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .primary-btn {
   background: var(--primary);
   color: white;
 }
-
 .primary-btn:hover {
   background: var(--accent);
   color: var(--primary);
 }
-
 .accent-btn {
   background: var(--accent);
   color: var(--primary);
 }
-
 .accent-btn:hover {
   background: var(--primary);
   color: white;
+}
+
+/* ===============================
+   WHY UDYOGI
+   =============================== */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 4rem 0 2rem;
+}
+.why-udyogi {
+  background: var(--background);
+  padding: 4rem 1rem;
+}
+.features-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.feature-card {
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+.feature-icon {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   HOW IT WORKS
+   =============================== */
+.how-it-works {
+  background: white;
+  padding: 4rem 1rem;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.step {
+  max-width: 280px;
+  text-align: center;
+}
+.step-number {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   TESTIMONIALS
+   =============================== */
+.testimonials {
+  background: var(--primary);
+  color: white;
+  padding: 4rem 1rem;
+}
+.testimonial-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* ===============================
+   CTA SECTION
+   =============================== */
+.cta-section {
+  background: var(--accent);
+  color: var(--primary);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.cta-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 /* ===============================
@@ -236,22 +397,27 @@
   margin-top: 4rem;
   font-size: 0.9rem;
 }
-/* ===============================
-   HERO SECTION WITH BACKGROUND IMAGE
-   =============================== */
-.hero {
-  position: relative;
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 6rem 1rem;
-  overflow: hidden;
 
-  /* Background image setup */
-  background-image: 
-    linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.85)), /* overlay tint */
-    url("bgimage.png"); /* 🔹 Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ===============================
+   ANIMATIONS
+   =============================== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
+
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-card:hover .feature-icon {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.feature-card:hover .feature-icon svg {
+  stroke: var(--primary);
+}
+

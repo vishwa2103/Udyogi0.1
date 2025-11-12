@@ -11,7 +11,6 @@ import Profile from "./pages/Profile/Profile";
 
 
 
-const App = () => {
   return (
     <>
     <Router>

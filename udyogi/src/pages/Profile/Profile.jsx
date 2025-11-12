@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Profile.css";
+import {FaWallet} from "react-icons/fa"
 import {
   FiSettings,
   FiLogOut,
