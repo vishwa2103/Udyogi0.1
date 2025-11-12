@@ -8,8 +8,8 @@ const Welcome = () => {
       <nav className="navbar">
         <div className="nav-inner">
           <div className="logo-container">
-            <Link to="#" className="logo">
-              <img src={"logo1.png"} alt="Logo" className="logo-img" />
+            <Link to="/" className="logo">
+              <img src={"UdyogiLogo.png"} alt="Logo" className="logo-img" />
               <span className="logo-text">UDYOGI</span>
             </Link>
           </div>
@@ -21,21 +21,7 @@ const Welcome = () => {
           </div>
           <div className="nav-actions">
             <Link to="/login" className="signin-btn">Login In / Register</Link>
-            <button className="profile-btn">
-              <svg
-                className="profile-icon"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-            </button>
+            
           </div>
         </div>
       </nav>

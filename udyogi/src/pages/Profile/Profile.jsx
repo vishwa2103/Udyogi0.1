@@ -8,10 +8,11 @@ import {
   FiSun,
   FiMoon,
   FiUserCheck,
-  FiWallet,
   FiStar,
   FiBell
 } from "react-icons/fi";
+import { FaWallet } from "react-icons/fa";  // Font Awesome
+
 
 const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,7 +88,7 @@ const Profile = () => {
             </li>
             <li>
               <button className="profile-nav-item">
-                <FiWallet /> Wallet & Billing
+                <FaWallet /> Wallet & Billing
               </button>
             </li>
             <li>
