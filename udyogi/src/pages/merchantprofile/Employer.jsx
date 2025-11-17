@@ -8,6 +8,7 @@ const Employer = () => {
     <div>
       <NavBar />
 
+      {/* ================== STATS SECTION ================== */}
       <section className="stats-section">
         <div className="stat-card">
           <div className="icon">📊</div>
@@ -38,6 +39,7 @@ const Employer = () => {
         </div>
       </section>
 
+      {/* ================== JOB MANAGEMENT ================== */}
       <section className="job-management">
         <h2>Job Post Management</h2>
         <div className="job-actions">
@@ -63,6 +65,7 @@ const Employer = () => {
         </div>
       </section>
 
+      {/* ================== NOTIFICATIONS ================== */}
       <section className="notifications">
         <h2>🔔 Notifications</h2>
         <ul>
@@ -72,6 +75,7 @@ const Employer = () => {
         </ul>
       </section>
 
+      {/* ================== EARNINGS & SUPPORT ================== */}
       <section className="extras">
         <div className="earnings">
           <h2>💵 Earnings Overview</h2>
@@ -87,6 +91,35 @@ const Employer = () => {
           <Link to="/support">
             <button className="cta-btn">Contact Support</button>
           </Link>
+        </div>
+      </section>
+
+      {/* ================== NEW SECTIONS ================== */}
+      <section className="additional-section">
+        <h2>🆘 Help & Support</h2>
+        <p>Find answers to common questions or report an issue.</p>
+        <div className="help-links">
+          <Link to="/support/faqs" className="help-link">📖 FAQs</Link>
+          <Link to="/support/contact" className="help-link">📩 Contact Support</Link>
+          <Link to="/support/report" className="help-link">🚨 Report an Issue</Link>
+        </div>
+      </section>
+
+      <section className="additional-section">
+        <h2>⚖️ Privacy & Terms</h2>
+        <p>Review our policies, terms, and data usage information.</p>
+        <div className="help-links">
+          <Link to="/policies/privacy" className="help-link">🔒 Privacy Policy</Link>
+          <Link to="/policies/terms" className="help-link">📜 Terms & Conditions</Link>
+        </div>
+      </section>
+
+      <section className="additional-section">
+        <h2>✅ Verification</h2>
+        <p>Verify your business identity and build trust with job seekers.</p>
+        <div className="help-links">
+          <Link to="/employer/verification" className="help-link">🪪 Upload ID / Documents</Link>
+          <Link to="/employer/verification-status" className="help-link">📄 Check Verification Status</Link>
         </div>
       </section>
     </div>
