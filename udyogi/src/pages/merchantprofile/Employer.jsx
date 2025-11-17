@@ -1,7 +1,9 @@
 import React from "react";
 import "./MerchantDashboard.css";
-import NavBar from "../../Components/NavBar";
+import NavBar from "./../home/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../home/Footer";
+
 
 const Employer = () => {
   return (
@@ -123,6 +125,7 @@ const Employer = () => {
         </div>
       </section>
     </div>
+      
   );
 };
 

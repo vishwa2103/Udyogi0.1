@@ -1,34 +1,112 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { Bell, User, Menu, X } from "lucide-react";
+import "./NavBar.css";
+  
+const Navbar = ({ onProfileClick }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-const Navbar = () => {
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", path: "/homeNew" },
+    { name: "Employee", path: "/employee" },
+    { name: "Employer", path: "/employer" },
+    { name: "Notifications", path: "/notifications" },
+  ];
+
   return (
-    <header className="nav">
-      <div className="nav-inner">
-        <div className="brand">
-          <div className="logo-mark" aria-hidden>
-            {/* simple bridge-mark using svg */}
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="24" height="24" rx="6" fill="#fff" />
-              <path d="M3 15c3-3 6-6 9-6s6 3 9 6" stroke="#1E40AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="6" cy="16.5" r="1.2" fill="#FACC15"/>
-            </svg>
-          </div>
-          <div className="brand-text">
-            <span className="brand-title">Udyogi</span>
-            <span className="brand-sub">The WorkBridge</span>
-          </div>
+    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+       
+       <div className="navbar-container">
+        {/* Logo */}
+        <div className="navbar-logo">
+          <div className="logo-icon">U</div>
+          <span className="logo-text">Udyogi</span>
         </div>
 
-        <nav className="nav-links" aria-label="Primary">
-          <a href="#jobs">Jobs</a>
-          <a href="#features">Features</a>
-          <a href="#testimonials">Stories</a>
-          <a href="#contact">Contact</a>
-          <button className="btn nav-cta">Get Started</button>
-        </nav>
+        {/* Desktop Links */}
+        <div className="navbar-links">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}   
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            > 
+              {link.name}
+            </NavLink>
+          ))}
+
+          {/* <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive ? "nav-link active profile-link" : "nav-link profile-link"
+            }
+          >
+            <User size={18} />
+            <span>Profile</span>
+          </NavLink> */}
+          <button
+              className="nav-link profile-link"
+              onClick={onProfileClick}>
+          <User size={18} />
+          <span>Profile</span>
+          </button>
+
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </div>
       </div>
-    </header>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="mobile-menu">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                isActive ? "mobile-link active" : "mobile-link"
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+
+          {/* <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive ? "mobile-link active" : "mobile-link"
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            <div className="mobile-profile">
+              <User size={18} />
+              <span>Profile</span>
+            </div>
+          </NavLink> */}
+          <button
+              className="nav-link profile-link"
+              onClick={onProfileClick}>
+          <User size={18} />
+          <span>Profile</span>
+          </button>
+        </div>
+      )}
+    </nav>
   );
 };
 
 export default Navbar;
+

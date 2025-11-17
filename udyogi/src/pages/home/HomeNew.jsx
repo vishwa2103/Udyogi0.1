@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import "./HomeNew.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Profile from "../Profile/Profile";
 
 /* Inline SVG illustration component for the hero (keeps no external asset requirement) */
 const HeroIllustration = () => (
@@ -18,7 +19,7 @@ const HeroIllustration = () => (
     {/* decorative circles */}
     <circle cx="620" cy="120" r="80" fill="#FACC15" opacity="0.12"/>
     <circle cx="160" cy="420" r="120" fill="#1E40AF" opacity="0.08"/>
-
+    
     {/* stylized connection nodes */}
     <g fill="#fff" opacity="0.95">
       <rect x="120" y="120" width="160" height="110" rx="14" fill="#ffffff"/>
@@ -43,6 +44,7 @@ const JobCard = ({ title, company, location, type }) => (
 );
 
 const Home = () => {
+  const [profileOpen, setProfileOpen] = useState(false);
   const jobs = [
     {title: "Frontend Developer", company: "TechNova Pvt Ltd", location: "Remote", type: "Full-time"},
     {title: "Backend Engineer", company: "CoreStack", location: "Bengaluru, India", type: "Full-time"},
@@ -54,7 +56,7 @@ const Home = () => {
 
   return (
     <div className="page">
-      <Navbar />
+      <Navbar onProfileClick={() => setProfileOpen(true)} />
 
       <main>
         {/* HERO */}
@@ -73,7 +75,7 @@ const Home = () => {
             <ul className="hero-features" aria-hidden>
               <li><strong>AI Matching</strong> • jobs that actually fit you</li>
               <li><strong>Verified Employers</strong> • safer hiring & applying</li>
-              <li><strong>Career Tools</strong> • resume, mock interviews, analytics</li>
+              {/* <li><strong>Career Tools</strong> • resume, mock interviews, analytics</li> */}
             </ul>
           </div>
 
@@ -122,7 +124,7 @@ const Home = () => {
               <p>Work only with vetted organizations — we prioritize trust and safety.</p>
             </div>
 
-            <div className="feature">
+            <div className="feature"> 
               <div className="feature-icon">📈</div>
               <h3>Career Growth Tools</h3>
               <p>Resume builder, interview practice, and analytics to track progress.</p>
@@ -202,6 +204,7 @@ const Home = () => {
       </main>
 
       <Footer />
+      <Profile isOpen={profileOpen} setIsOpen={setProfileOpen} />
     </div>
   );
 };

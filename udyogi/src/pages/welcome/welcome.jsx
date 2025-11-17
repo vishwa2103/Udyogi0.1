@@ -45,7 +45,6 @@ const Welcome = () => {
   useEffect(() => {
     let i = 0;
     const speed = 40;
-
     function typeWriter() {
       if (i < heroText.length) {
         setTagline(heroText.substring(0, i + 1));

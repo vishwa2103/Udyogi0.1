@@ -437,9 +437,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Bell, User, Menu, X } from "lucide-react";
-import "./Navbar.css";
+// import "./Navbar.css";
 
-const Navbar = () => {
+const NavbarNew = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -450,7 +450,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/homeNew" },
     { name: "Employee", path: "/employee" },
     { name: "Employer", path: "/employer" },
     { name: "Notifications", path: "/notifications" },
@@ -531,4 +531,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarNew;
