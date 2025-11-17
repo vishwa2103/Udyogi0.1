@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Profile.css";
-import {FaWallet} from "react-icons/fa"
 import {
   FiSettings,
   FiLogOut,
@@ -15,16 +14,16 @@ import {
 import { FaWallet } from "react-icons/fa";  // Font Awesome
 
 
-const Profile = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Profile = ({isOpen, setIsOpen}) => {
+  // const [isOpen, setIsOpen] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      {/* Open Button */}
+      {/* Open Button
       <button className="profile-open-btn" onClick={() => setIsOpen(true)}>
         Merchant Profile
-      </button>
+      </button> */}
 
       {/* Backdrop */}
       <div

@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarNew";
 import EmployeeOverview from "../components/EmployeeOverview";
 import "./Employee.css";
 import JobRecommendations from "../components/JobRecommendations";
