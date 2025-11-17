@@ -309,3 +309,61 @@
     font-size: 1.3rem;
   }
 }
+/* =================== ADDITIONAL SECTIONS =================== */
+.additional-section {
+  background-color: #fff;
+  margin: 2rem 2.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.additional-section h2 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.additional-section p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.help-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.help-link {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.help-link:hover {
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .additional-section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .help-links {
+    flex-direction: column;
+  }
+
+  .help-link {
+    width: 100%;
+    text-align: center;
+  }
+}

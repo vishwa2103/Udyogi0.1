@@ -1,126 +1,159 @@
 :root {
-  --primary: #1e40af;     /* Deep Blue */
-  --accent: #facc15;      /* Warm Yellow */
-  --background: #f9fafb;  /* Soft White */
+  --primary: #1E40AF;     /* Deep Blue */
+  --accent: #2563EB;      /* Link Blue */
+  --background: #F9FAFB;  /* Soft White */
   --text: #111827;        /* Charcoal */
+  --sidebar-bg: #FFFFFF;
+  --logout: #DC2626;
 }
 
-/* Container */
-.linkedin-settings-container {
+/* Layout */
+.settings-container {
   display: flex;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--text);
+  font-family: "Poppins", sans-serif;
 }
 
 /* Sidebar */
 .settings-sidebar {
-  width: 280px;
-  background-color: #fff;
+  width: 260px;
+  background-color: var(--sidebar-bg);
   border-right: 1px solid #e5e7eb;
-  padding: 2rem 1.2rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.settings-header {
+.settings-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 1rem;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: 0.3s;
+  margin-bottom: 1.8rem;
   color: var(--text);
 }
 
+/* Sidebar items */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 .sidebar-item:hover {
-  background-color: var(--background);
-  color: var(--primary);
+  background-color: #f3f4f6;
 }
 
 .sidebar-item.active {
   background-color: var(--primary);
-  color: #fff;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-item svg {
+  width: 20px;
+  height: 20px;
 }
 
 .sidebar-item.logout {
-  margin-top: 2rem;
-  color: #b91c1c;
+  color: var(--logout);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar-item.logout:hover {
   background-color: #fee2e2;
 }
 
-/* Icons */
-.icon {
-  color: var(--accent);
-}
-
-/* Main Content */
+/* Main section */
 .settings-main {
   flex: 1;
-  padding: 3rem 4rem;
-  background-color: var(--background);
+  padding: 3rem;
 }
 
 .settings-content h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.2rem;
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
 .settings-content p {
-  font-size: 0.95rem;
   color: #4b5563;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .settings-content ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
 }
 
 .settings-content li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #e5e7eb;
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
 }
 
 .settings-content li span {
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 500;
+  cursor: pointer;
+}
+
+/* Buttons */
+.edit-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.edit-btn:hover {
+  background-color: #153187;
+}
+
+.edit-btn.danger {
+  background-color: #dc2626;
+}
+
+.edit-btn.danger:hover {
+  background-color: #b91c1c;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .linkedin-settings-container {
+  .settings-container {
     flex-direction: column;
   }
 
   .settings-sidebar {
     width: 100%;
-    display: flex;
+    flex-direction: row;
     overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid #e5e7eb;
+    justify-content: space-around;
+    padding: 1rem;
   }
 
   .sidebar-item {
-    flex: 1;
-    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
   }
 
   .settings-main {

@@ -9,7 +9,7 @@ const Settings = () => {
     switch (activeTab) {
       case "account":
         return (
-          <div className="settings-content">
+          <section className="settings-content">
             <h3>Account Preferences</h3>
             <p>Manage your email, password, and language preferences.</p>
             <ul>
@@ -17,11 +17,12 @@ const Settings = () => {
               <li>Password: *********</li>
               <li>Language: English (US)</li>
             </ul>
-          </div>
+            <button className="edit-btn">Edit Account</button>
+          </section>
         );
       case "privacy":
         return (
-          <div className="settings-content">
+          <section className="settings-content">
             <h3>Privacy & Security</h3>
             <p>Control who can see your information and activity.</p>
             <ul>
@@ -29,11 +30,12 @@ const Settings = () => {
               <li>Manage blocked users</li>
               <li>Data sharing with third parties</li>
             </ul>
-          </div>
+            <button className="edit-btn">Manage Privacy</button>
+          </section>
         );
       case "notifications":
         return (
-          <div className="settings-content">
+          <section className="settings-content">
             <h3>Notifications</h3>
             <p>Choose how you want to be notified.</p>
             <ul>
@@ -41,11 +43,12 @@ const Settings = () => {
               <li>Push notifications: <span>Enabled</span></li>
               <li>Job alerts: <span>Daily</span></li>
             </ul>
-          </div>
+            <button className="edit-btn">Update Preferences</button>
+          </section>
         );
       case "visibility":
         return (
-          <div className="settings-content">
+          <section className="settings-content">
             <h3>Visibility</h3>
             <p>Manage who can see your profile and activity status.</p>
             <ul>
@@ -53,18 +56,20 @@ const Settings = () => {
               <li>Online status: <span>Visible</span></li>
               <li>Connections visibility: <span>Only Me</span></li>
             </ul>
-          </div>
+            <button className="edit-btn">Adjust Visibility</button>
+          </section>
         );
       case "data":
         return (
-          <div className="settings-content">
+          <section className="settings-content">
             <h3>Data Privacy</h3>
             <p>Manage your data, download copies, or delete your account.</p>
             <ul>
               <li>Download your data</li>
               <li>Delete your account</li>
             </ul>
-          </div>
+            <button className="edit-btn danger">Manage Data</button>
+          </section>
         );
       default:
         return null;
@@ -72,42 +77,30 @@ const Settings = () => {
   };
 
   return (
-    <div className="linkedin-settings-container">
+    <div className="settings-container">
       <aside className="settings-sidebar">
-        <h2 className="settings-header">Settings</h2>
-        <div
-          className={`sidebar-item ${activeTab === "account" ? "active" : ""}`}
-          onClick={() => setActiveTab("account")}
-        >
-          <User className="icon" /> Account
-        </div>
-        <div
-          className={`sidebar-item ${activeTab === "privacy" ? "active" : ""}`}
-          onClick={() => setActiveTab("privacy")}
-        >
-          <Shield className="icon" /> Privacy
-        </div>
-        <div
-          className={`sidebar-item ${activeTab === "notifications" ? "active" : ""}`}
-          onClick={() => setActiveTab("notifications")}
-        >
-          <Bell className="icon" /> Notifications
-        </div>
-        <div
-          className={`sidebar-item ${activeTab === "visibility" ? "active" : ""}`}
-          onClick={() => setActiveTab("visibility")}
-        >
-          <Eye className="icon" /> Visibility
-        </div>
-        <div
-          className={`sidebar-item ${activeTab === "data" ? "active" : ""}`}
-          onClick={() => setActiveTab("data")}
-        >
-          <Database className="icon" /> Data Privacy
-        </div>
+        <h2 className="settings-title">Settings</h2>
+
+        {[
+          { id: "account", label: "Account", icon: <User /> },
+          { id: "privacy", label: "Privacy", icon: <Shield /> },
+          { id: "notifications", label: "Notifications", icon: <Bell /> },
+          { id: "visibility", label: "Visibility", icon: <Eye /> },
+          { id: "data", label: "Data Privacy", icon: <Database /> },
+        ].map((item) => (
+          <div
+            key={item.id}
+            className={`sidebar-item ${activeTab === item.id ? "active" : ""}`}
+            onClick={() => setActiveTab(item.id)}
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </div>
+        ))}
 
         <div className="sidebar-item logout">
-          <LogOut className="icon" /> Logout
+          <LogOut />
+          <span>Logout</span>
         </div>
       </aside>
 
